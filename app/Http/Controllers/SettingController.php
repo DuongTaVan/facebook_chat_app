@@ -79,7 +79,7 @@ class SettingController extends Controller
             'app_secret' => 'be9f05e2ce892802faa89de83c921337',
             'default_graph_version'  => 'v9.0'
         ]);
-        $token = "EAAOffLzD118BANPS59TvxK0MRMZBsuv9EW9g8YCYvSgdwHrOibeEfCqKxZBZAXi1GLVc3SgNV6okprMlTBONpUkm0m1UERZCfVAaVRlSJ4phZCnETsE7q4WB32fH0aDlJZAwWppmz2ht3YfkBN06WUt7tcC80XZA11bf6fCYMFMgd9KxZBip0uvplpJOu3UFc3OHOFdLOJWxl16Ybf2LxGWZBGyLGPHmzPccZD";
+        $token = "EAAOffLzD118BAIwQXcmkYnedZAt3YEMPaAWDXA3cdalq7tY1O5iEv4AyjxZAWqJbyMSXYdmfGYT00gLjnigTG1fCt6C9TsZB0hK1OImwE4Mmoi4YrzEAr3NDZAophfbfz4jwAyWkjZAqIgZAlqNCOGax3AgqGEFoZCNo6DvTPEkdZBJzsb0CipN5FO8MqmFBN6h9n8X58IgOn6hdnpZBJ5gByZCDSfUBFiIKMZD";
         //dd($token);
         try {
             // Returns a `FacebookFacebookResponse` object
