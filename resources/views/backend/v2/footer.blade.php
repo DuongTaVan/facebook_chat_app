@@ -1,7 +1,6 @@
 {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> --}}
 <script type="text/javascript" src="{{ secure_asset('/js/backend/v2/bootstrap-custom.js') }}"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
-<script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
 <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{ secure_asset('/js/backend/custom.js') }}"></script>
@@ -53,30 +52,6 @@
         $('#showZendeskWidget').click(function (e) {
             $('#launcher').contents().find('#Embed button').click();
         });
-    });
-</script>
-<script>
-    CKEDITOR.replace('summary-ckeditor');
-    CKEDITOR.replace('summary-description');
-</script>
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
-        }
-    }
-
-    $("#imgInp").change(function () {
-        readURL(this);
-    });
-    $(document).ready(function () {
-        $('#example').DataTable();
     });
 </script>
 @yield('script_dth')

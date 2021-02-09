@@ -393,14 +393,14 @@
                     small#count_in {
                         position: absolute;
                         /* margin-bottom: -10px; */
-                        top: 331px;
+                        top: 422px;
                         left: 385px;
                     }
 
                     small#count_out {
                         position: absolute;
                         /* margin-bottom: -10px; */
-                        top: 468px;
+                        top: 559px;
                         left: 385px;
                     }
 
@@ -421,24 +421,6 @@
                                         <button style="margin-right: 10px;" type="button" class="btn btn-primary">
                                             Basic Settings
                                         </button>
-                                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                                data-target="#navbarSupportedContent"
-                                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                                aria-label="Toggle navigation">
-                                            <span class="navbar-toggler-icon"></span>
-                                        </button>
-
-                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                            <ul class="navbar-nav mr-auto">
-                                                <li class="nav-item active">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#exampleModal1">
-                                                        Display Options
-                                                    </button>
-                                                </li>
-                                            </ul>
-
-                                        </div>
                                     </nav>
 
                                     <div class="row">
@@ -558,12 +540,11 @@
                                                     </style>
                                                     <fb:login-button scope="public_profile,email,pages_show_list,pages_read_engagement,pages_manage_metadata,pages_messaging" onlogin="checkLoginState();">
                                                         <a id="connect_with_page_facebook"
-                                                           {{--                                                                                                              href="{{ url('/auth/redirect/facebook') }}"--}}
-                                                           {{--                                                        href="https://www.facebook.com/v9.0/dialog/oauth?response_type=token&display=popup&client_id=1019783021844319&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer%2Fcallback%3Fmethod%3DGET%26path%3Dme%252Faccounts%26version%3Dv9.0&scope=pages_read_engagement"--}}
                                                            href="{{ route('setting.loginFB') }}"
                                                            class="btn btn-primary" target="_blank">Connect
                                                             with Facebook</a>
                                                     </fb:login-button>
+{{--                                                    <btton class="btn btn-primary" onclick="logOut()">logout</btton>--}}
                                                     <small class="form-text text-muted">If your fanpage keeps loading, please turn off the popup blocker on your browser</small>
                                                 </div>
                                             </div>
@@ -575,8 +556,8 @@
                                                     <span>Whitelist your domain</span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" placeholder="Copy and paste your website from your browser here">
-                                                    <small class="form-text text-muted">If your fanpage keeps loading, please turn off the popup blocker on your browser</small>
+                                                    <input class="form-control" type="text" placeholder="your website from your browser" value="{{$page->shopify_domain}}">
+                                                    <small class="form-text text-muted">The third-party domain is accessible in Messenger web view for use with the Messenger Extensions SDK and for Messenger plugins.</small>
                                                 </div>
 
                                             </div>
@@ -622,8 +603,7 @@
                                         <div class="ztb-tab-container ztb-left-button" style="min-width: 259px;">
 
                                             <div id="ztb-fbc-show-widget" class="ztb-fbc-button">
-                                                <span class="tab_content0"><i
-                                                            class="fab fa-facebook-messenger"></i></span>
+                                                <span class="tab_content0"><i class="fab fa-facebook-messenger"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -635,160 +615,6 @@
                 @include('backend.v2.other-apps')
             </div>
             @include('backend.v2.layouts.footer-wrapper')
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">DISPLAY OPTIONS</h5>
-                <div class="btn_top">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                        <div class="ndn-content2">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <input class="enabling_checkbox" name="active[isOn]" type="checkbox"
-                                       id="active_time_enable">
-                                <label class="enabling_label dropdown_label" for="active_time_enable">
-                                    Activate date/time
-                                </label>
-                                <input style="display: none" class="form-control ip_datte1" type="datetime-local"
-                                       value="2018-07-22">
-                            </div>
-                            <div>
-                                <div class="form-group">
-                                    <label style="font-size: 11px;">* Tool will turn on/off automatically at selected
-                                        time</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
-                        <div class="ndn-content2">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="ndn_select1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option value="sl_4">Show on selectpage</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div style="display: none" class="ndn-js-1">
-                                    <div id="buildyourform">
-
-                                    </div>
-                                    <div class="ndn-js-add">
-                                        <div class="add_item1">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            <span style="line-height: 35px;" id="add_page_text">Add page</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <div class="ct">
-                                    <div class="ct1 form-group">
-                                        <div class="ct1_1">
-                                            <div class="gt12">General Settings</div>
-                                            <div class="gt1">></div>
-                                        </div>
-                                        <div style="clear: both"></div>
-                                    </div>
-                                    <div style="display: none" class="ct2">
-                                        <select id="ndn_select2" class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option value="sl_5">Show on selectpage</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                    <div style="display: none" class="ndn-js-2">
-                                        <div id="buildyourform1">
-
-                                        </div>
-                                        <div class="ndn-js-add1">
-                                            <div class="add_item1">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                <span style="line-height: 35px;" id="add_page_text">Add page</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div style="font-size: 11px;" class="ft">Get new ideas for your site with our display option user guide.
-                    Advanced display options not available in preview mode
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -817,22 +643,7 @@
             } else
                 $('.ndn-js-1').css('display', 'none');
         })
-        $('.ndn-js-add').click(function () {
-            var lastField = $("#buildyourform div:last");
-            var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
-            var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
-            fieldWrapper.data("idx", intId);
-            var fName = $("<input type=\"text\" class=\"fieldname\" />");
-            var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
-            var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
-            removeButton.click(function () {
-                $(this).parent().remove();
-            });
-            fieldWrapper.append(fType);
-            fieldWrapper.append(fName);
-            fieldWrapper.append(removeButton);
-            $("#buildyourform").append(fieldWrapper);
-        });
+
         $('.ct1_1').click(function () {
             $('.gt1').toggleClass('gt1_1');
             $('.ndn-js-2').css('display', 'none');
@@ -844,22 +655,6 @@
             } else
                 $('.ndn-js-2').css('display', 'none');
         })
-        $('.ndn-js-add1').click(function () {
-            var lastField = $("#buildyourform1 div:last");
-            var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
-            var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
-            fieldWrapper.data("idx", intId);
-            var fName = $("<input type=\"text\" class=\"fieldname\" />");
-            var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
-            var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
-            removeButton.click(function () {
-                $(this).parent().remove();
-            });
-            fieldWrapper.append(fType);
-            fieldWrapper.append(fName);
-            fieldWrapper.append(removeButton);
-            $("#buildyourform1").append(fieldWrapper);
-        });
 
 
         $('.text_in').keyup(function () {
@@ -974,8 +769,11 @@
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
             console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-                'Thanks for logging in, ' + response.name + '!';
+        });
+    }
+    function logOut(){
+        FB.logout(function(response) {
+            console.log('logout success');
         });
     }
 

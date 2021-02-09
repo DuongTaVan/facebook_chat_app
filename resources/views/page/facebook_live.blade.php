@@ -1,5 +1,4 @@
-@if($setting->status == 1)
-        <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +10,7 @@
 
         .fb_dialog_content iframe {
             left: {{$setting->locator}}% !important;
-            top: {{$setting->locator_top}}% !important;
+            top: {{$setting->locator_top + 10}}% !important;
         }
 
         /* ***************
@@ -44,7 +43,6 @@
     </style>
 </head>
 <body>
-
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
@@ -74,7 +72,7 @@
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      attribution="setup_tool"
-     page_id="102437898461884"
+     page_id="{{$page->id_page}}"
      theme_color="{{$setting->theme_color}}"
      greeting_dialog_display="{{$setting->greeting_dialog_display}}"
      greeting_dialog_delay="{{$setting->greeting_dialog_delay}}"
@@ -86,4 +84,3 @@
 
 </body>
 </html>
-@endif
