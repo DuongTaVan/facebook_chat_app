@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 08, 2021 lúc 10:22 AM
+-- Thời gian đã tạo: Th2 09, 2021 lúc 06:20 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.3.16
 
@@ -81,7 +81,29 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2018_09_12_101645_add_default_to_test_on_charges_table', 1),
 (12, '2020_12_25_154502_add_freemium_flag_to_shops_table', 1),
 (13, '2021_01_28_075353_settings', 2),
-(14, '2021_02_04_070323_create_users_table', 3);
+(14, '2021_02_04_070323_create_users_table', 3),
+(15, '2021_02_08_100044_create_pages_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `shopify_domain` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_page` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `pages`
+--
+
+INSERT INTO `pages` (`id`, `shopify_domain`, `id_page`, `created_at`, `updated_at`) VALUES
+(1, 'dth99store.myshopify.com', '100152468773909', '2021-02-08 03:24:21', '2021-02-08 03:24:21');
 
 -- --------------------------------------------------------
 
@@ -129,7 +151,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `shopify_domain`, `status`, `theme_color`, `logged_in_greeting`, `logged_out_greeting`, `greeting_dialog_display`, `greeting_dialog_delay`, `locator`, `locator_top`, `created_at`, `updated_at`) VALUES
-(1, 'dth99store.myshopify.com', 1, '#55e00b', 'Lorem Ipsum passages, and more', 'Lorem Ipsum passages, and more', 'fade', '12', '0', '81', '2021-01-28 02:42:09', '2021-02-02 00:59:01');
+(1, 'dth99store.myshopify.com', 1, '#e0150b', 'Hi, Can i help you', 'See you a gain !', 'fade', '2', '93', '87', '2021-01-28 02:42:09', '2021-02-08 21:31:51');
 
 -- --------------------------------------------------------
 
@@ -197,6 +219,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `plans`
 --
 ALTER TABLE `plans`
@@ -236,7 +264,13 @@ ALTER TABLE `charges`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT cho bảng `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `plans`
