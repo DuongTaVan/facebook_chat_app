@@ -299,8 +299,8 @@
                         cursor: pointer;
                         box-sizing: border-box;
                         bottom: 20px;
-                        min-width: 40px;
                         right: auto;
+                        height: 65px;
                         left: {{$setting->locator}}%;
                     }
 
@@ -310,16 +310,10 @@
                         height: auto;
                         background: {{$setting->theme_color}};
                         color: #ffffff;
-                        font-family: arial, helvetica, sans-serif;
-                        font-size: 0px;
-                        font-weight: normal;
-                        text-decoration: none;
-                        line-height: 32px;
                         border: medium none;
-                        border-radius: 10px;
                         cursor: pointer;
                         float: left;
-                        border-radius: 100px;
+                        border-radius: 50%;
                     }
 
                     .ztb-fbc-button span {
@@ -538,7 +532,7 @@
                                                             margin-left: 170px;
                                                         }
                                                     </style>
-                                                    <fb:login-button scope="public_profile,email,pages_show_list,pages_read_engagement,pages_manage_metadata,pages_messaging" onlogin="checkLoginState();">
+                                                    <fb:login-button class="text-center" scope="public_profile,email,pages_show_list,pages_read_engagement,pages_manage_metadata,pages_messaging" onlogin="checkLoginState();">
                                                         <a id="connect_with_page_facebook"
                                                            href="{{ route('setting.loginFB') }}"
                                                            class="btn btn-primary" target="_blank">Connect
@@ -600,7 +594,7 @@
                                     </div>
 
                                     <div class="cnt_chat">
-                                        <div class="ztb-tab-container ztb-left-button" style="min-width: 259px;">
+                                        <div class="ztb-tab-container ztb-left-button">
 
                                             <div id="ztb-fbc-show-widget" class="ztb-fbc-button">
                                                 <span class="tab_content0"><i class="fab fa-facebook-messenger"></i></span>

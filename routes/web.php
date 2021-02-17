@@ -58,6 +58,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('setting','SettingController@index')->name('setting.index');
     Route::get('save_setting','SettingController@update')->name('setting.update');
     Route::get('login_facebook','SettingController@loginFB')->name('setting.loginFB');
-    Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
-    Route::get('/callback/{provider}', 'SocialController@callback');
+//    Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+//    Route::get('/callback/{provider}', 'SocialController@callback');
 });

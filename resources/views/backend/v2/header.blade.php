@@ -24,7 +24,7 @@
     <link href="{{ secure_asset('/css/backend/styles.css') }}" rel="stylesheet">
 {{--    <link href="{{ secure_asset('/css/backend/v2/ndn_setting.css') }}" rel="stylesheet">--}}
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-{{--    <script src="https://use.fontawesome.com/7348d57aef.js"></script>--}}
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 </head>
 <body>
 
